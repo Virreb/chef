@@ -1,6 +1,21 @@
 from flask import Flask, render_template
+from flask_basicauth import BasicAuth
+import json, os
 
 app = Flask(__name__)
+
+if os.path.exists('credentials.json') is False:
+    print('Need credentials.json file, aborting!')
+    exit()
+
+with open('credentials.json', 'r') as f:
+    credentials = json.load(f)
+
+app.config['BASIC_AUTH_USERNAME'] = credentials['login']['username']
+app.config['BASIC_AUTH_PASSWORD'] = credentials['login']['password']
+app.config['BASIC_AUTH_FORCE'] = True
+
+basic_auth = BasicAuth(app)
 
 
 @app.route('/index')
@@ -66,4 +81,4 @@ def show_text():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='127.0.0.1', port='8080', debug=True)
