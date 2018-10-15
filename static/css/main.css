@@ -1452,6 +1452,7 @@
 		border-bottom: dotted 1px;
 		color: inherit;
 		text-decoration: none;
+        border-bottom-style: none;  /* added to remove underlines on links */
 	}
 
 		a:hover {
@@ -1552,7 +1553,6 @@
 
 	blockquote {
 		border-left: solid 4px #fff;
-		font-style: italic;
 		margin: 0 0 2em 0;
 		padding: 0.5em 0 0.5em 2em;
 	}
@@ -2005,7 +2005,7 @@
 		}
 
 			ul.alt li {
-				border-top: solid 1px #fff;
+				/*border-top: solid 1px #fff;*/
 				padding: 0.5em 0;
 			}
 
