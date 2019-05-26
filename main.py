@@ -82,7 +82,6 @@ def show_text():
 
 @app.route('/tal/<name>')
 def show_speech(name):
-    print(name)
 
     if name == 'all':
         filename = 'level_2_tal.html'
@@ -92,4 +91,4 @@ def show_speech(name):
     return render_template(filename)
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    app.run(host='127.0.0.1', port=8080, threaded=True, debug=False)
