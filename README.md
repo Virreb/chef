@@ -30,3 +30,16 @@ The easiest way to install the required packages is to read the requirements.txt
 If some package is added later on, you can simply create a new requirements.txt file with
 
 > pip freeze > requirements.txt
+
+### Database
+Install local MySQL server with:
+>sudo apt update
+>sudo apt install mysql-server
+>sudo mysql_secure_installation
+
+Start the server now and at system start with:
+sudo systemctl start mysql
+sudo systemctl enable mysql
+
+Enter the MySql console with:
+sudo mysql
