@@ -10,3 +10,4 @@ max_requests = 500  # number of requests per worker before restarting the worker
 keepalive = 5  # seconds to wait for requests on a Keep Alive connection with dir. connection to the client
 # (remove above if you have a load balancer)
 # capture_output = True     # write stdout to errorlog, no log active, hence disabled
+daemon = True
